@@ -377,31 +377,10 @@ class Player {
     strokeWeight(2);
     box(w, h, d);
 
-    // ★ 頭上ミニゲージ
-    translate(0, -42, 0);
-    float barW = 60;
-    float barH = 8;
-    float ratio = constrain(timeRemaining / maxTime, 0, 1);
-
-    rectMode(CENTER);
-    fill(0, 180);
-    stroke(255);
-    strokeWeight(1.5);
-    rect(0, 0, barW + 4, barH + 4, 3);
-
-    rectMode(CORNER);
-    noStroke();
-    if (ratio > 0.5)      fill(0, 230, 110);
-    else if (ratio > 0.2) fill(255, 200, 0);
-    else                  fill(255, 40, 40);
-
-    if (ratio > 0) {
-      rect(-barW / 2.0, -barH / 2.0, barW * ratio, barH, 2);
-    }
-
     popMatrix();
   }
 }
+
 
 // 2. 赤の四角（ダメージ障害物）
 class Obstacle {
